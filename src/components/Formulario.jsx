@@ -18,7 +18,7 @@ const Formulario = () => {
             id="mascota"
             type="text"
             placeholder="Nombre de tu mascota" 
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md hover:border-gray-300 focus:outline-none focus:border-indigo-600"
             />
           </div>
 
@@ -30,7 +30,7 @@ const Formulario = () => {
             id="propietario"
             type="text"
             placeholder="Nombre del dueño" 
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md hover:border-gray-300 focus:outline-none focus:border-indigo-600"
             />
           </div>
 
@@ -42,7 +42,7 @@ const Formulario = () => {
             id="email"
             type="email"
             placeholder="Email de contacto" 
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md hover:border-gray-300 focus:outline-none focus:border-indigo-600"
             />
           </div>
 
@@ -53,11 +53,11 @@ const Formulario = () => {
             <input 
             id="alta"
             type="date" 
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md "
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md hover:border-gray-300 focus:outline-none focus:border-indigo-600"
             />
           </div>
 
-          <div className="mb-5">
+          <div className="mb-9">
             <label className="block text-gray-600 uppercase font-bold" htmlFor="sintomas">
             Describe los síntomas
             </label>
@@ -66,14 +66,14 @@ const Formulario = () => {
             id="sintomas" 
             cols="30" 
             rows="10" 
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" 
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md hover:border-gray-300 focus:outline-none focus:border-indigo-600" 
             placeholder="Escribe aquí los sintomas">
             </textarea>
           </div>
 
           <input 
           type="submit"
-          className="bg-indigo-600 w-full p-3 text-white uppercase font-bold rounded-md 
+          className="bg-indigo-600 w-full p-3 text-white uppercase font-bold rounded-md shadow-lg
           hover:bg-indigo-700 cursor-pointer transition-all"
           value="Agregar paciente"
           />
