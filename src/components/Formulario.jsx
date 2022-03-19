@@ -7,9 +7,16 @@ const Formulario = () => {
   const [fecha, setFecha] = useState('');
   const [sintomas, setSintomas] = useState('');
 
-  const handleSubmit = (e) =>{
-    e.preventDefault();
-    console.log('Enviando formulario')
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    //Validación del formulario
+    if([nombre, propietario, email, fecha, sintomas].includes('')){
+      console.log('Hay un campo vacío')
+    } else {
+      console.log('Envío correcto')
+    }
+
   }
 
   return (
@@ -21,7 +28,10 @@ const Formulario = () => {
         {""} su estado
         </p>
 
-        <form className="bg-white shadow-md rounded-lg py-10 px-5 mb-10" onSubmit={handleSubmit}>
+        <form 
+        className="bg-white shadow-md rounded-lg py-10 px-5 mb-10" 
+        onSubmit={handleSubmit}
+        >
 
           
 
@@ -85,14 +95,11 @@ const Formulario = () => {
             Describe los síntomas
             </label>
             <textarea 
-            name="" 
             id="sintomas" 
-            cols="30" 
-            rows="10" 
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md hover:border-gray-300 focus:outline-none focus:border-indigo-600" 
-            placeholder="Escribe aquí los sintomas">
+            placeholder="Escribe aquí los sintomas"
             value={sintomas}
-            onChange = { (e) => setSintomas(e.target.value)}
+            onChange = { (e) => setSintomas(e.target.value)}>
             </textarea>
           </div>
 
