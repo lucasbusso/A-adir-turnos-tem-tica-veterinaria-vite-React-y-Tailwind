@@ -10,8 +10,11 @@ const ListadoPacientes = ({pacientes}) => {
       Administra tus {""}
       <span className="text-indigo-600 font-bold">pacientes y citas</span>
       </p>
+
       {pacientes.map( paciente => (
         <Paciente 
+//Siempre utilizar key cuando usas .map
+          key= {paciente.id}
           paciente={paciente}
         />
       ))}
