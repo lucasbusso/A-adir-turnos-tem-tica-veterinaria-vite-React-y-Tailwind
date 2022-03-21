@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Error from './Error'
 
-const Formulario = ({pacientes, setPacientes}) => {
+const Formulario = ({pacientes, setPacientes, paciente}) => {
 //Componentes del formulario
   const [nombre, setNombre] = useState('');
   const [propietario, setPropietario] = useState('');
@@ -11,6 +11,18 @@ const Formulario = ({pacientes, setPacientes}) => {
 
   const [error, setError] = useState(false);
 //Id para el .map de listadoPaciente
+
+//useEffect
+  useEffect(() => {
+    if( Object.keys(paciente).length > 0){
+      setNombre(paciente.nombre)
+      setPropietario(paciente.propietario)
+      setEmail(paciente.email)
+      setFecha(paciente.fecha)
+      setSintomas(paciente.sintomas)
+    }
+  }, [paciente])
+
   const generarId = () => {
 //Genera un id único para cada iteracion del map
     const random = Math.random().toString(36).substr(2);
