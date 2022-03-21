@@ -33,12 +33,7 @@ const Formulario = () => {
         className="bg-white shadow-md rounded-lg py-10 px-5 mb-10" 
         onSubmit={handleSubmit}
         >
-          {/* Mensaje de error */}
-          { error && (
-          <div className="bg-red-700 text-white text-center p-3 uppercase font-bold mb-3 rounded-md">
-            <p>Todos los campos son obligatorios</p>
-          </div>) }
-
+          
           <div className="mb-5">
             <label className="block text-gray-600 uppercase font-bold" htmlFor="mascota">
             Nombre de la Mascota
@@ -94,7 +89,7 @@ const Formulario = () => {
             />
           </div>
 
-          <div className="mb-9">
+          <div className="">
             <label className="block text-gray-600 uppercase font-bold" htmlFor="sintomas">
             Describe los síntomas
             </label>
@@ -107,6 +102,11 @@ const Formulario = () => {
             </textarea>
           </div>
 
+{/* Mensaje de error */}
+          { error && (
+          <div className="text-red-600 text-left text-sm p-3 uppercase font-bold mb-3 rounded-md mb-3">
+            <p>Todos los campos son obligatorios</p>
+          </div>) }
           <input 
           type="submit"
           className="bg-indigo-600 w-full p-3 text-white uppercase font-bold rounded-md shadow-lg
