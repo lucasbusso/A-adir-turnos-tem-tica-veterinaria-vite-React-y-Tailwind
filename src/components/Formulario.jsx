@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Error from './Error'
 
-const Formulario = ({pacientes, setPacientes, paciente}) => {
+const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => {
 //Componentes del formulario
   const [nombre, setNombre] = useState('');
   const [propietario, setPropietario] = useState('');
@@ -12,7 +12,7 @@ const Formulario = ({pacientes, setPacientes, paciente}) => {
   const [error, setError] = useState(false);
 //Id para el .map de listadoPaciente
 
-//useEffect
+//useEffect espera el evento de modificacion del objeto paciente
   useEffect(() => {
     if( Object.keys(paciente).length > 0){
       setNombre(paciente.nombre)
@@ -46,9 +46,19 @@ const Formulario = ({pacientes, setPacientes, paciente}) => {
       email,
       fecha,
       sintomas,
-      id: generarId()
+      }
+//Actualizando pacientes editados
+    if(paciente.id){
+      objetoPaciente.id = paciente.id
+      const pacientesActualizados = pacientes.map(pacienteState => 
+          pacienteState.id === paciente.id ? objetoPaciente : paciente.State)
+      setPacientes(pacientesActualizados)
+      setPaciente({})
+    }else{
+      objetoPaciente.id = generarId();
+      setPacientes([...pacientes, objetoPaciente]);
     }
-    setPacientes([...pacientes, objetoPaciente]);
+    
 //Reiniciar el formualrio
     setNombre('')
     setPropietario('')
@@ -147,9 +157,8 @@ const Formulario = ({pacientes, setPacientes, paciente}) => {
           type="submit"
           className="bg-indigo-600 w-full p-3 text-white uppercase font-bold rounded-md shadow-lg
           hover:bg-indigo-700 cursor-pointer transition-all mt-5"
-          value="Agregar paciente"
+          value={ paciente.id ? 'Guardar cambios' : 'Agregar Paciente' }
           />
-
         </form>
     </div>
     )
