@@ -134,7 +134,7 @@ const Formulario = ({pacientes, setPacientes}) => {
           <input
           type="submit"
           className="bg-indigo-600 w-full p-3 text-white uppercase font-bold rounded-md shadow-lg
-          hover:bg-indigo-700 cursor-pointer transition-all"
+          hover:bg-indigo-700 cursor-pointer transition-all mt-5"
           value="Agregar paciente"
           />
 
