@@ -14,7 +14,10 @@ function App() {
       pacientes={pacientes}
       setPacientes={setPacientes}
       />
-      < ListadoPacientes />
+{/* Agregar pacientes al componente */}
+      < ListadoPacientes
+        pacientes={pacientes}
+      />
     </div>
     </div>
   )
