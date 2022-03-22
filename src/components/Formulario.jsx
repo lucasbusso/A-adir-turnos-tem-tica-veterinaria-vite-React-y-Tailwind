@@ -45,13 +45,13 @@ const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => {
       propietario,
       email,
       fecha,
-      sintomas,
+      sintomas
       }
 //Actualizando pacientes editados
     if(paciente.id){
       objetoPaciente.id = paciente.id
       const pacientesActualizados = pacientes.map(pacienteState => 
-          pacienteState.id === paciente.id ? objetoPaciente : paciente.State)
+          pacienteState.id === paciente.id ? objetoPaciente : pacienteState)
       setPacientes(pacientesActualizados)
       setPaciente({})
     }else{
@@ -79,8 +79,8 @@ const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => {
         </p>
 
         <form
-        className="bg-white shadow-md rounded-lg py-10 px-5 mb-10"
         onSubmit={handleSubmit}
+        className="bg-white shadow-md rounded-lg py-10 px-5 mb-10"
         >
 {/* Mascota */}
           <div className="mb-5">
